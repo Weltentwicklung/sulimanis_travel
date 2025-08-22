@@ -38,6 +38,8 @@
                 Console.WriteLine("2 -> Berechnung des grössten gemeinsamen Teilers aus 2 Zahlen\n(Ist von der Ausgabe her genau das gleiche wie Option 1)");
                 Console.WriteLine("3 -> Berechnung des kleinsten gemeinsamen Vielfachen aus 2 Zahlen");
                 Console.WriteLine("4 -> Berechnung des Mittelwerts eines Arrays");
+                Console.WriteLine("5 -> Berechnung des tiefsten Wertes eines Arrays");
+                Console.WriteLine("6 -> Berechnung des höchsten Wertes eines Arrays");
                 Console.WriteLine("\nBitte gebe die gewünschte Option ein:");
                 string optionChoosed = Console.ReadLine()!;
                 int selectedProgram;
@@ -46,7 +48,7 @@
                 // Checks whether the User choosed a valid option.
                 // !!!!! If new options are added, the while loop condition must be changed. The last contition needs to be increased by one for each option (selectedProgram > ?)
                 // While loop Checks if the user input is valid
-                while (!int.TryParse(optionChoosed, out selectedProgram) || selectedProgram < 1 || selectedProgram > 4)
+                while (!int.TryParse(optionChoosed, out selectedProgram) || selectedProgram < 1 || selectedProgram > 6)
                 {
                     if (wrongSelection > 0 && wrongSelection < 9)
                     {
@@ -79,27 +81,46 @@
                 {
                     case 1:
                         Console.WriteLine("\nSuper, lass uns den ggT aus zwei Zahlen bestimmen!\n");
-                        var (nr1, nr2) = GetNrAandNrB.getNrAandNrB();
+                        var (nr1, nr2) = GetUserInput.getNrAandNrB();
                         Console.WriteLine("\nDer ggT aus " + nr1 + " und " + nr2 + " ergibt:");
                         Console.WriteLine("\n" + MyMath.Calc_ggT(nr1, nr2));
                         break;
 
                     case 2:
                         Console.WriteLine("\n... Wir bestimmen also den ggT \"rekursiv\" (↼_↼)\n");
-                        (nr1, nr2) = GetNrAandNrB.getNrAandNrB();
+                        (nr1, nr2) = GetUserInput.getNrAandNrB();
                         Console.WriteLine("\nDer ggT aus " + nr1 + " und " + nr2 + " ergibt:");
                         Console.WriteLine("\n" + MyMath.Calc_ggT_r(nr1, nr2));
                         break;
 
                     case 3:
                         Console.WriteLine("\nSchön, schön, dann lass und das kgV aus zwei Zahlen bestimmen!\n");
-                        (nr1, nr2) = GetNrAandNrB.getNrAandNrB();
+                        (nr1, nr2) = GetUserInput.getNrAandNrB();
                         Console.WriteLine("\nDer kgV aus " + nr1 + " und " + nr2 + " ergibt:");
                         Console.WriteLine("\n" + MyMath.Calc_kgV(nr1, nr2));
                         break;
 
                     case 4:
                         Console.WriteLine("\nGrandios, wir berechnen den Mittelwert eines Arrays\n");
+                        double[] arrAv = GetUserInput.getArray();
+                        Console.WriteLine("\nDer Mittelwert aus dem eingegebenen Array ist:");
+                        Console.WriteLine("\n" + MyMath.Calc_Arr_Avarage(arrAv));
+                        break;
+
+                    case 5:
+                        Console.WriteLine("\nGrandios, wir suchen den tiefsten Wert eines Arrays\n");
+                        double[] arrSm = GetUserInput.getArray();
+                        Console.WriteLine("\nDer tiefste Wert aus dem eingegebenen Array ist:");
+                        Console.WriteLine("\n" + MyMath.Calc_Arr_Small(arrSm));
+                        break;
+
+                    case 6:
+                        Console.WriteLine("\nGrandios, wir suchen den höchsten Wert eines Arrays\n");
+                        double[] arrBi = GetUserInput.getArray();
+                        Console.WriteLine("\nDer höchste Wert aus dem eingegebenen Array ist:");
+                        Console.WriteLine("\n" + MyMath.Calc_Arr_Big(arrBi));
+                        break;
+
                         
 
                 }

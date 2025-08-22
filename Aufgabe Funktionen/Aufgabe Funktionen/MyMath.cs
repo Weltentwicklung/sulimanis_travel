@@ -42,7 +42,7 @@ namespace Aufgabe_Funktionen
         }
 
         // Calculates the average of an array
-        public static double Calc_Avarage(double[] arrayAverage)
+        public static double Calc_Arr_Avarage(double[] arrayAverage)
         {
             double sumAverage = 0;
             for (int i = 0; i < arrayAverage.Length; i++)
@@ -54,7 +54,37 @@ namespace Aufgabe_Funktionen
             return resultAverage;
         }
 
-        
+        public static double Calc_Arr_Small(double[] arraySmall)
+        {
+            double nrSmall  = arraySmall[0];
+            int i = 0;
+
+            foreach (double userNr in arraySmall)
+            {
+                if (userNr < arraySmall[i])
+                {
+                    nrSmall = userNr;
+                }
+            }
+
+            return nrSmall;
+        }
+
+        public static double Calc_Arr_Big(double[] arrayBig)
+        {
+            double nrBig = arrayBig[0];
+
+            foreach (double userNr in arrayBig)
+            {
+                if (userNr > nrBigs)
+                {
+                    nrBig = userNr;
+                }
+            }
+
+            return nrBig;
+        }
+
 
 
 

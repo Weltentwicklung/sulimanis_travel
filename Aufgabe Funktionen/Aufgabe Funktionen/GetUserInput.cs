@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aufgabe_Funktionen
 {
-    internal class GetNrAandNrB
+    internal class GetUserInput
     {
         public static (int, int) getNrAandNrB()
         {
@@ -116,6 +116,21 @@ namespace Aufgabe_Funktionen
             }
 
             return (nr1, nr2);
+
+
+        }
+
+        public static double[] getArray()
+        {
+            double userInputArr = Console.ReadLine();
+            double.TryParse(userInputArr, out userInputArr);
+
+            double[] userArray = 
+            return userArray[];*/
+
+            double[] userArray = { 1, 2, 3, 4, 5, 6 };
+
+            return userArray;
         }
     }
 }
